@@ -249,19 +249,6 @@
   .ft-text { font-family: 'Noto Serif SC', serif; font-size: 17px; color: var(--text); letter-spacing: 4px; }
   .ft-sub { font-size: 11px; color: var(--text-light); margin-top: 8px; letter-spacing: 1.5px; opacity: 0.6; }
 
-  .float-cta {
-    position: sticky; bottom: 24px; z-index: 100; text-align: center; pointer-events: none;
-  }
-  .float-cta button {
-    pointer-events: auto; background: linear-gradient(135deg, var(--gold), #A0764A);
-    color: #fff; border: none; padding: 14px 44px; border-radius: 50px;
-    font-size: 15px; font-weight: 600; letter-spacing: 3px;
-    font-family: 'Noto Serif SC', serif;
-    box-shadow: 0 6px 24px rgba(182,138,83,0.35);
-    cursor: pointer; transition: all 0.3s ease;
-  }
-  .float-cta button:active { transform: scale(0.95); }
-
   .music-btn {
     position: fixed; bottom: 30px; right: 20px; z-index: 200;
     width: 44px; height: 44px; border-radius: 50%;
@@ -455,11 +442,6 @@
 
 </div>
 
-<!-- Floating CTA -->
-<div class="float-cta">
-  <button onclick="shareInvitation()">📨 转发邀请函</button>
-</div>
-
 <!-- Music Toggle -->
 <div class="music-btn on" id="musicToggle" onclick="toggleMusic()" title="背景音乐">🎵</div>
 
@@ -535,28 +517,6 @@ function openMap() {
       window.open(urls[1], '_blank');
     }
   }, 800);
-}
-
-// ═══════════════════════════════════════════
-//  Share
-// ═══════════════════════════════════════════
-function shareInvitation() {
-  const shareUrl = window.location.origin + window.location.pathname;
-  if (navigator.share) {
-    navigator.share({
-      title: '兜兜百日宴邀请函',
-      text: '唐若昕（兜兜）小朋友百日宴，诚邀您及家人参加！📅 2026年7月5日 📍 醴陵春风醴食府3楼宴会厅',
-      url: shareUrl,
-    }).catch(() => {});
-  } else {
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(shareUrl).then(() => {
-        alert('邀请函链接已复制，请粘贴发送给好友！');
-      });
-    } else {
-      prompt('复制下方链接发送给好友：', shareUrl);
-    }
-  }
 }
 
 // ═══════════════════════════════════════════
