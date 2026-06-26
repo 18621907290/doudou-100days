@@ -2,46 +2,75 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>兜兜 · 百日宴邀请函</title>
+<meta property="og:title" content="兜兜百日宴邀请函">
+<meta property="og:description" content="唐若昕（兜兜）小朋友百日宴，诚邀您及家人参加！2026年7月5日 · 醴陵春风醴食府">
+<meta property="og:image" content="https://18621907290.github.io/doudou-100days/微信分享图.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#E8F4FD">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  
   body {
     font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-    background: #F5EDE4;
+    background: #E8F4FD;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
   }
+  
   .container { max-width: 480px; width: 100%; }
   
   /* 封面卡片 */
   .cover-card {
     background: #fff;
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 32px rgba(44,95,124,0.15);
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
   }
-  .cover-card:hover { transform: translateY(-4px); }
+  .cover-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(44,95,124,0.25); }
+  .cover-card:active { transform: scale(0.98); }
+  
+  .cover-image {
+    width: 100%;
+    display: block;
+    border-radius: 20px 20px 0 0;
+  }
+  
   .cover-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 40px 20px 20px;
-    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+    padding: 60px 24px 24px;
+    background: linear-gradient(to top, rgba(44,95,124,0.8) 0%, transparent 100%);
     color: #fff;
+    text-align: center;
   }
-  .cover-overlay h1 { font-size: 24px; font-weight: 700; letter-spacing: 4px; margin-bottom: 8px; }
-  .cover-overlay p { font-size: 14px; opacity: 0.9; letter-spacing: 2px; }
+  .cover-overlay h1 { 
+    font-size: 28px; 
+    font-weight: 700; 
+    letter-spacing: 4px; 
+    margin-bottom: 8px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .cover-overlay p { 
+    font-size: 15px; 
+    opacity: 0.95; 
+    letter-spacing: 2px;
+  }
+  
   .tap-hint {
     position: absolute;
-    bottom: 60px;
+    bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -49,14 +78,18 @@
     align-items: center;
     gap: 8px;
     color: #fff;
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 2px;
     animation: bounce 2s ease-in-out infinite;
     text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    background: rgba(44,95,124,0.3);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
   }
   @keyframes bounce {
     0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
-    50% { transform: translateX(-50%) translateY(8px); opacity: 0.6; }
+    50% { transform: translateX(-50%) translateY(6px); opacity: 0.7; }
   }
   
   /* 详情页 */
@@ -65,17 +98,18 @@
     background: #FFFBF5; 
     max-width: 480px; 
     width: 100%; 
-    border-radius: 16px; 
-    overflow: hidden; 
-    box-shadow: 0 4px 24px rgba(0,0,0,0.1); 
-    animation: slideUp 0.5s ease; 
+    border-radius: 20px; 
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(44,95,124,0.15);
+    animation: slideUp 0.5s ease;
   }
   @keyframes slideUp { 
     from { opacity: 0; transform: translateY(40px); } 
     to { opacity: 1; transform: translateY(0); } 
   }
+  
   .detail-header {
-    background: linear-gradient(135deg, #B68A53 0%, #D4B896 100%);
+    background: linear-gradient(135deg, #2C5F7C 0%, #4A90B8 100%);
     color: #fff;
     padding: 16px 20px;
     display: flex;
@@ -96,25 +130,48 @@
     display: flex;
     align-items: center;
     gap: 6px;
+    transition: background 0.3s;
   }
-  .detail-title { font-size: 16px; font-weight: 600; letter-spacing: 2px; }
-  .tip-text { text-align: center; color: #999; font-size: 12px; padding: 20px; letter-spacing: 1px; }
-  .detail-image { width: 100%; display: block; }
+  .back-btn:hover { background: rgba(255,255,255,0.3); }
+  .detail-title { 
+    font-size: 16px; 
+    font-weight: 600; 
+    letter-spacing: 2px;
+  }
+  
+  .detail-content {
+    width: 100%;
+    min-height: 800px;
+  }
+  
+  .detail-content iframe {
+    width: 100%;
+    border: none;
+    min-height: 800px;
+  }
+  
+  /* 提示文字 */
+  .tip-text { 
+    text-align: center; 
+    color: #999; 
+    font-size: 12px; 
+    padding: 16px 20px; 
+    letter-spacing: 1px;
+    background: #f9f9f9;
+  }
 </style>
 </head>
 <body>
 <div class="container">
   <!-- 封面卡片 -->
   <div class="cover-card" id="coverCard" onclick="openDetail()">
-    <div style="position: relative;">
-      <img src="https://raw.githubusercontent.com/18621907290/doudou-100days/main/cover.jpg" alt="兜兜百日宴" style="width:100%; display:block; border-radius: 16px 16px 0 0;" />
-      <div class="cover-overlay">
-        <h1>兜兜 · 百日宴</h1>
-        <p>诚邀您及家人参加</p>
-      </div>
-      <div class="tap-hint">
-        <span>点击查看完整邀请函</span>
-      </div>
+    <img class="cover-image" src="https://18621907290.github.io/doudou-100days/cover.jpg" alt="兜兜百日宴邀请函" />
+    <div class="cover-overlay">
+      <h1>兜兜 · 百日宴</h1>
+      <p>诚邀您及家人参加</p>
+    </div>
+    <div class="tap-hint">
+      <span>👆 点击查看完整邀请函</span>
     </div>
   </div>
   
@@ -125,7 +182,9 @@
       <span class="detail-title">兜兜百日宴邀请函</span>
       <div style="width: 60px;"></div>
     </div>
-    <img class="detail-image" src="https://raw.githubusercontent.com/18621907290/doudou-100days/main/doudou-detail-full-hd.png" alt="百日宴邀请函详情" />
+    <div class="detail-content">
+      <iframe src="invitation.html" id="detailIframe"></iframe>
+    </div>
     <p class="tip-text">长按图片保存到相册，分享给亲朋好友 🎉</p>
   </div>
 </div>
@@ -142,6 +201,20 @@ function closeDetail() {
   document.getElementById('coverCard').style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+// 等待 iframe 加载完成后调整高度
+document.getElementById('detailIframe').addEventListener('load', function() {
+  try {
+    const iframe = this;
+    const doc = iframe.contentDocument || iframe.contentWindow.document;
+    if (doc && doc.body) {
+      iframe.style.height = Math.max(doc.body.scrollHeight, 800) + 'px';
+    }
+  } catch(e) {
+    // 跨域限制，设置默认高度
+    document.getElementById('detailIframe').style.height = '2000px';
+  }
+});
 </script>
 </body>
 </html>
