@@ -2,219 +2,811 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>兜兜 · 百日宴邀请函</title>
-<meta property="og:title" content="兜兜百日宴邀请函">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="description" content="唐若昕（兜兜）小朋友百日宴邀请函 · 2026年7月5日 · 醴陵春风醴食府3楼宴会厅">
+<meta property="og:title" content="兜兜 · 百日宴邀请函">
 <meta property="og:description" content="唐若昕（兜兜）小朋友百日宴，诚邀您及家人参加！2026年7月5日 · 醴陵春风醴食府">
-<meta property="og:image" content="https://18621907290.github.io/doudou-100days/share-preview.jpg">
+<meta property="og:image" content="https://18621907290.github.io/doudou-100days/share-preview.jpg?v=20260627">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://18621907290.github.io/doudou-100days/">
+<meta property="og:site_name" content="兜兜百日宴">
+<meta property="og:locale" content="zh_CN">
+<meta property="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#FFF5F7">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="兜兜百日宴">
+<meta name="x5-page-mode" content="app">
+<meta name="x5-fullscreen" content="true">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=yes">
+<meta name="browsermode" content="application">
+<meta name="full-screen" content="yes">
+<title>兜兜 · 百日宴邀请函</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  
+
+  :root {
+    --gold: #C4788B;
+    --gold-light: #E8A0B5;
+    --gold-pale: #F5D5DE;
+    --cream: #FFF5F7;
+    --warm-bg: #FFFBF5;
+    --card-bg: #FFFFFF;
+    --text: #5A3E4B;
+    --text-mid: #8B6F7E;
+    --text-light: #B8A0AD;
+    --accent: #C4788B;
+    --accent-soft: #F5D5DE;
+    --divider: #F0D5DE;
+  }
+
   body {
-    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: var(--warm-bg);
+    color: var(--text);
+    line-height: 1.8;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  /* ── Background decoration ── */
+  .bg-decor { position: fixed; pointer-events: none; z-index: 0; border-radius: 50%; opacity: 0.04; }
+  .bg-c1 { top: -10%; right: -20%; width: 70vw; height: 70vw; background: radial-gradient(circle, #D4B896, transparent 70%); animation: driftA 12s ease-in-out infinite; }
+  .bg-c2 { bottom: -5%; left: -15%; width: 60vw; height: 60vw; background: radial-gradient(circle, #F5E1D8, transparent 70%); animation: driftB 15s ease-in-out infinite; }
+  @keyframes driftA { 0%,100%{transform:translate(0,0)} 33%{transform:translate(3vw,-2vw)} 66%{transform:translate(-2vw,1vw)} }
+  @keyframes driftB { 0%,100%{transform:translate(0,0)} 33%{transform:translate(-2vw,2vw)} 66%{transform:translate(3vw,-1vw)} }
+
+  /* ── Main wrapper ── */
+  .invitation {
+    position: relative; z-index: 1; max-width: 480px; margin: 0 auto;
+    background: var(--card-bg); min-height: 100vh;
+    box-shadow: 0 0 80px rgba(0,0,0,0.05);
+  }
+  @media (min-width: 481px) {
+    .invitation { border-radius: 28px; margin: 16px auto; min-height: auto; }
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; width: 100%; height: 100vh; max-height: 700px; overflow: hidden;
     background: #FFF5F7;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
   }
-  
-  .container { max-width: 480px; width: 100%; }
-  
-  /* 封面卡片 */
-  .cover-card {
-    background: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(196,120,139,0.15);
-    cursor: pointer;
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center 25%;
+    transition: transform 0.1s linear;
+  }
+  .hero-vignette {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom,
+      rgba(0,0,0,0.08) 0%, transparent 25%,
+      transparent 55%, rgba(255,245,247,0.85) 85%, rgba(255,245,247,1) 100%);
+  }
+  .hero-top-label {
+    position: absolute; top: 36px; left: 50%; transform: translateX(-50%);
+    font-family: 'Noto Serif SC', serif; font-size: 12px; letter-spacing: 6px;
+    color: rgba(255,255,255,0.9); text-shadow: 0 1px 6px rgba(0,0,0,0.2);
+    text-transform: uppercase;
+  }
+  .hero-center {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -55%);
+    text-align: center; width: 100%; padding: 0 24px;
+  }
+  .hero-date-en {
+    font-family: 'Noto Serif SC', serif; font-size: 14px; letter-spacing: 8px;
+    color: rgba(255,255,255,0.85); text-shadow: 0 1px 8px rgba(0,0,0,0.15);
+    margin-bottom: 16px;
+  }
+  .hero-title {
+    font-family: 'Noto Serif SC', serif; font-size: 44px; font-weight: 900;
+    color: #fff; letter-spacing: 8px; text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    line-height: 1.3;
+  }
+  .hero-sub {
+    display: block; font-size: 16px; font-weight: 400; letter-spacing: 6px;
+    margin-top: 8px; color: rgba(255,255,255,0.9);
+  }
+  .hero-bottom {
+    position: absolute; bottom: 40px; left: 0; right: 0; text-align: center;
+  }
+  .hero-arrow {
+    display: inline-block; color: var(--gold); font-size: 20px;
+    animation: bounce 2s ease-in-out infinite; letter-spacing: 4px;
+  }
+  @keyframes bounce { 0%,100%{transform:translateY(0);opacity:1} 50%{transform:translateY(8px);opacity:0.5} }
+
+  /* ── SECTIONS ── */
+  .sec { padding: 48px 36px; position: relative; }
+  .sec-sm { padding: 32px 36px; }
+  @media (max-width: 380px) {
+    .sec { padding: 36px 24px; }
+    .sec-sm { padding: 24px 24px; }
+  }
+
+  /* ── English decorative quote ── */
+  .en-quote {
+    text-align: center; font-family: 'Noto Serif SC', serif;
+    font-size: 14px; letter-spacing: 3px; color: var(--gold-light);
+    padding: 0 32px 24px; line-height: 2;
+    font-style: italic;
+  }
+  .en-quote::before { content: '⁎ '; }
+  .en-quote::after { content: ' ⁎'; }
+
+  /* ── Section title ── */
+  .sec-title {
+    font-family: 'Noto Serif SC', serif; text-align: center;
+    font-size: 22px; font-weight: 700; color: var(--text);
+    letter-spacing: 4px; margin-bottom: 28px;
+  }
+  .sec-title::after {
+    content: ''; display: block; width: 36px; height: 1.5px;
+    background: var(--gold); margin: 14px auto 0; border-radius: 1px;
+  }
+
+  /* ── Divider ── */
+  .divider {
+    text-align: center; padding: 8px 32px 24px;
+    color: var(--gold-light); font-size: 16px; letter-spacing: 8px;
+  }
+
+  /* ── INTRO TEXT ── */
+  .intro-block {
+    text-align: center; font-family: 'Noto Serif SC', serif;
+    font-size: 15px; line-height: 2.6; color: var(--text-mid); letter-spacing: 1.5px;
+  }
+  .intro-block .hl {
+    color: var(--accent); font-weight: 600; font-size: 18px;
+  }
+  .intro-block .big-num {
+    font-size: 32px; font-weight: 900; color: var(--gold);
+    letter-spacing: 4px; display: inline-block; margin: 4px 0;
+  }
+
+  /* ── BABY NAME CARD ── */
+  .name-card {
+    text-align: center; padding: 28px 0 0;
+  }
+  .name-label {
+    font-size: 12px; letter-spacing: 4px; color: var(--gold); display: block;
+  }
+  .name-full {
+    font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 900;
+    color: var(--text); letter-spacing: 10px; display: block; margin: 10px 0;
+  }
+  .name-nick {
+    font-size: 13px; color: var(--text-light); letter-spacing: 3px;
+  }
+
+  /* ── DETAILS CARD ── */
+  .details-card {
+    background: var(--warm-bg);
+    border: 1px solid var(--gold-pale);
+    border-radius: 20px; padding: 32px 28px;
+    box-shadow: 0 2px 20px rgba(196,120,139,0.06);
+  }
+  .d-row {
+    display: flex; align-items: flex-start; padding: 16px 0;
+    border-bottom: 1px dashed var(--divider);
+  }
+  .d-row:last-child { border-bottom: none; }
+  .d-icon {
+    width: 46px; height: 46px; min-width: 46px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-soft), var(--gold-pale));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; margin-right: 16px;
+  }
+  .d-label { font-size: 11px; color: var(--gold); letter-spacing: 3px; }
+  .d-value { font-size: 17px; font-weight: 600; color: var(--text); margin-top: 3px; }
+  .d-value small { font-size: 12px; font-weight: 400; color: var(--text-light); display: block; margin-top: 3px; }
+
+  /* ── COUNTDOWN ── */
+  .cd-wrap { text-align: center; padding: 0 32px 36px; }
+  .cd-title { font-size: 12px; letter-spacing: 5px; color: var(--text-light); margin-bottom: 20px; }
+  .cd-grid { display: flex; justify-content: center; gap: 14px; }
+  .cd-item {
+    background: #fff; border: 1px solid var(--gold-pale); border-radius: 14px;
+    padding: 12px 10px; min-width: 60px; text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  }
+  .cd-num {
+    font-family: 'Noto Serif SC', serif; font-size: 30px; font-weight: 700;
+    color: var(--accent); line-height: 1;
+  }
+  .cd-lbl { font-size: 10px; color: var(--text-light); margin-top: 5px; letter-spacing: 2px; }
+
+  /* ── GALLERY ── */
+  .gallery {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    padding: 0 8px;
+  }
+  .g-item {
+    border-radius: 14px; overflow: hidden; aspect-ratio: 1;
+    background: var(--gold-pale); box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    cursor: pointer; transition: transform 0.3s ease; position: relative;
+  }
+  .g-item:active { transform: scale(0.96); }
+  .g-item.wide { grid-column: 1 / -1; aspect-ratio: 16/9; }
+  .g-item img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ── MAP ── */
+  .map-sec { padding: 0 36px 40px; text-align: center; }
+  .map-card {
+    background: var(--warm-bg); border: 1px solid var(--gold-pale);
+    border-radius: 18px; padding: 28px 24px; cursor: pointer;
+    transition: all 0.3s ease; box-shadow: 0 2px 14px rgba(0,0,0,0.03);
+  }
+  .map-card:active { transform: scale(0.98); }
+  .map-icon { font-size: 38px; margin-bottom: 10px; }
+  .map-name { font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 700; color: var(--text); letter-spacing: 3px; }
+  .map-addr { font-size: 13px; color: var(--text-light); margin-top: 6px; line-height: 1.6; }
+  .map-hint { font-size: 11px; color: var(--gold); margin-top: 10px; letter-spacing: 2px; }
+
+  /* ── RSVP ── */
+  .rsvp-sec { padding: 0 36px 40px; text-align: center; }
+  .rsvp-msg { font-size: 14px; color: var(--text-mid); letter-spacing: 1.5px; line-height: 2.2; }
+  .rsvp-cta { font-size: 12px; color: var(--text-light); margin-top: 18px; letter-spacing: 1.5px; }
+  .rsvp-tel {
+    display: inline-block; font-family: 'Noto Serif SC', serif;
+    font-size: 21px; font-weight: 700; color: var(--accent);
+    letter-spacing: 4px; margin-top: 6px; text-decoration: none;
+  }
+
+  /* ── FOOTER ── */
+  .footer { text-align: center; padding: 44px 32px; }
+  .ft-ornament { font-size: 20px; letter-spacing: 8px; color: var(--gold-light); margin-bottom: 14px; }
+  .ft-text { font-family: 'Noto Serif SC', serif; font-size: 17px; color: var(--text); letter-spacing: 4px; }
+  .ft-sub { font-size: 11px; color: var(--text-light); margin-top: 8px; letter-spacing: 1.5px; opacity: 0.6; }
+
+  /* ── FLOATING CTA ── */
+  .float-cta {
+    position: sticky; bottom: 24px; z-index: 100; text-align: center; pointer-events: none;
+  }
+  .float-cta button {
+    pointer-events: auto; background: linear-gradient(135deg, var(--gold), #A0506A);
+    color: #fff; border: none; padding: 14px 44px; border-radius: 50px;
+    font-size: 15px; font-weight: 600; letter-spacing: 3px;
+    font-family: 'Noto Serif SC', serif;
+    box-shadow: 0 6px 24px rgba(196,120,139,0.35);
+    cursor: pointer; transition: all 0.3s ease;
+  }
+  .float-cta button:active { transform: scale(0.95); }
+
+  /* ── MUSIC TOGGLE ── */
+  .music-btn {
+    position: fixed; bottom: 30px; right: 20px; z-index: 200;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(255,255,255,0.92); backdrop-filter: blur(10px);
+    border: 1px solid var(--gold-light); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; box-shadow: 0 3px 14px rgba(0,0,0,0.06);
     transition: all 0.3s ease;
-    position: relative;
   }
-  .cover-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(196,120,139,0.25); }
-  .cover-card:active { transform: scale(0.98); }
-  
-  .cover-image {
-    width: 100%;
-    display: block;
-    border-radius: 20px 20px 0 0;
+  .music-btn.on { animation: musicPulse 1.5s ease-in-out infinite; }
+  @keyframes musicPulse {
+    0%,100%{box-shadow:0 3px 14px rgba(0,0,0,0.06)}
+    50%{box-shadow:0 3px 22px rgba(196,120,139,0.3)}
   }
-  
-  .cover-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 60px 24px 24px;
-    background: linear-gradient(to top, rgba(90,62,75,0.8) 0%, transparent 100%);
-    color: #fff;
-    text-align: center;
+
+  /* ── LIGHTBOX ── */
+  .lb { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.94); z-index:9999; align-items:center; justify-content:center; flex-direction:column; }
+  .lb.on { display:flex; }
+  .lb img { max-width:92vw; max-height:75vh; border-radius:8px; object-fit:contain; }
+  .lb-close { position:absolute; top:20px; right:24px; width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.15); border:none; color:#fff; font-size:20px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+
+  /* ── PETALS ── */
+  .petal {
+    position: fixed; pointer-events: none; z-index: 0; font-size: 18px; opacity: 0.45;
+    animation: petalFall linear infinite;
   }
-  .cover-overlay h1 { 
-    font-size: 28px; 
-    font-weight: 700; 
-    letter-spacing: 4px; 
-    margin-bottom: 8px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  @keyframes petalFall {
+    0%{transform:translateY(-10vh) rotate(0deg);opacity:0}
+    10%{opacity:0.45}
+    90%{opacity:0.35}
+    100%{transform:translateY(105vh) rotate(720deg);opacity:0}
   }
-  .cover-overlay p { 
-    font-size: 15px; 
-    opacity: 0.95; 
-    letter-spacing: 2px;
-  }
-  
-  .tap-hint {
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    color: #fff;
-    font-size: 14px;
-    letter-spacing: 2px;
-    animation: bounce 2s ease-in-out infinite;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-    background: rgba(196,120,139,0.3);
-    padding: 8px 16px;
-    border-radius: 20px;
-    backdrop-filter: blur(4px);
-  }
-  @keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
-    50% { transform: translateX(-50%) translateY(6px); opacity: 0.7; }
-  }
-  
-  /* 详情页 */
-  .detail-page { 
-    display: none; 
-    background: #FFFBF5; 
-    max-width: 480px; 
-    width: 100%; 
-    border-radius: 20px; 
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(196,120,139,0.15);
-    animation: slideUp 0.5s ease;
-  }
-  @keyframes slideUp { 
-    from { opacity: 0; transform: translateY(40px); } 
-    to { opacity: 1; transform: translateY(0); } 
-  }
-  
-  .detail-header {
-    background: linear-gradient(135deg, #C4788B 0%, #E8A0B5 100%);
-    color: #fff;
-    padding: 16px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
-  .back-btn {
-    background: rgba(255,255,255,0.2);
-    border: none;
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: background 0.3s;
-  }
-  .back-btn:hover { background: rgba(255,255,255,0.3); }
-  .detail-title { 
-    font-size: 16px; 
-    font-weight: 600; 
-    letter-spacing: 2px;
-  }
-  
-  .detail-content {
-    width: 100%;
-    min-height: 800px;
-  }
-  
-  .detail-content iframe {
-    width: 100%;
-    border: none;
-    min-height: 800px;
-  }
-  
-  /* 提示文字 */
-  .tip-text { 
-    text-align: center; 
-    color: #999; 
-    font-size: 12px; 
-    padding: 16px 20px; 
-    letter-spacing: 1px;
-    background: #f9f9f9;
+
+  @media (max-width: 380px) {
+    .hero-title { font-size: 36px; letter-spacing: 5px; }
+    .d-value { font-size: 15px; }
+    .cd-num { font-size: 26px; }
   }
 </style>
 </head>
 <body>
-<div class="container">
-  <!-- 封面卡片 -->
-  <div class="cover-card" id="coverCard" onclick="openDetail()">
-    <img class="cover-image" src="cover.jpg" alt="兜兜百日宴邀请函" />
-    <div class="cover-overlay">
-      <h1>兜兜 · 百日宴</h1>
-      <p>诚邀您及家人参加</p>
+
+<div class="bg-decor bg-c1"></div>
+<div class="bg-decor bg-c2"></div>
+
+<div class="invitation" id="invitation">
+
+  <!-- ══════ HERO ══════ -->
+  <div class="hero">
+    <img class="hero-img" src="DSC04466摆台1.jpg" alt="兜兜" id="heroImg">
+    <div class="hero-vignette"></div>
+    <div class="hero-top-label">100 DAYS</div>
+    <div class="hero-center">
+      <div class="hero-date-en">JULY 5, 2026</div>
+      <h1 class="hero-title">百日宴<span class="hero-sub">唐若昕 · 兜兜</span></h1>
     </div>
-    <div class="tap-hint">
-      <span>👆 点击查看完整邀请函</span>
+    <div class="hero-bottom">
+      <span class="hero-arrow">⌄</span>
     </div>
   </div>
-  
-  <!-- 详情页 -->
-  <div class="detail-page" id="detailPage">
-    <div class="detail-header">
-      <button class="back-btn" onclick="closeDetail()">← 返回</button>
-      <span class="detail-title">兜兜百日宴邀请函</span>
-      <div style="width: 60px;"></div>
-    </div>
-    <div class="detail-content">
-      <iframe src="invitation.html" id="detailIframe"></iframe>
-    </div>
-    <p class="tip-text">长按图片保存到相册，分享给亲朋好友 🎉</p>
+
+  <!-- ══════ English Quote ══════ -->
+  <div class="en-quote">
+    A hundred days of sunshine,<br>a lifetime of love ahead.
   </div>
+
+  <!-- ══════ INVITATION ══════ -->
+  <div class="sec-sm">
+    <div class="intro-block">
+      <p>时光匆匆，转眼间</p>
+      <p>我们的小天使已经来到这个世界</p>
+      <span class="big-num">100</span>
+      <p>天了</p>
+      <p style="margin-top:14px;">在这特别的日子里</p>
+      <p><span class="hl">我们诚挚邀请您及家人</span></p>
+      <p>与我们一同分享这份喜悦与幸福</p>
+    </div>
+  </div>
+
+  <!-- ══════ BABY NAME ══════ -->
+  <div class="divider">— ⁕ —</div>
+  <div class="name-card">
+    <span class="name-label">爱 女</span>
+    <span class="name-full">唐 若 昕</span>
+    <span class="name-nick">小名 · 兜兜</span>
+  </div>
+
+  <!-- ══════ English Quote ══════ -->
+  <div class="en-quote">
+    Every child begins the world anew,<br>bringing light where none was due.
+  </div>
+
+  <!-- ══════ EVENT DETAILS ══════ -->
+  <div class="sec-sm">
+    <h2 class="sec-title">宴 会 详 情</h2>
+    <div class="details-card">
+      <div class="d-row">
+        <div class="d-icon">📅</div>
+        <div>
+          <div class="d-label">宴会日期</div>
+          <div class="d-value">2026年7月5日<small>星期日 · 农历五月廿一</small></div>
+        </div>
+      </div>
+      <div class="d-row">
+        <div class="d-icon">⏰</div>
+        <div>
+          <div class="d-label">宴会时间</div>
+          <div class="d-value">上午 11:38<small>吉时迎宾 · 恭候光临</small></div>
+        </div>
+      </div>
+      <div class="d-row">
+        <div class="d-icon">📍</div>
+        <div>
+          <div class="d-label">宴会地点</div>
+          <div class="d-value">春风醴食府 · 3楼宴会厅<small>湖南省株洲市醴陵市</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ COUNTDOWN ══════ -->
+  <div class="en-quote">The days are counting down to joy.</div>
+  <div class="cd-wrap">
+    <div class="cd-title">距 离 盛 宴</div>
+    <div class="cd-grid" id="countdown">
+      <div class="cd-item"><div class="cd-num" id="cd-days">--</div><div class="cd-lbl">天</div></div>
+      <div class="cd-item"><div class="cd-num" id="cd-hours">--</div><div class="cd-lbl">时</div></div>
+      <div class="cd-item"><div class="cd-num" id="cd-mins">--</div><div class="cd-lbl">分</div></div>
+      <div class="cd-item"><div class="cd-num" id="cd-secs">--</div><div class="cd-lbl">秒</div></div>
+    </div>
+  </div>
+
+  <!-- ══════ GALLERY ══════ -->
+  <div class="divider">— ⁕ —</div>
+  <div class="sec-sm">
+    <h2 class="sec-title">成 长 瞬 间</h2>
+    <div class="gallery">
+      <div class="g-item wide" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="DSC04466摆台1.jpg" alt="兜兜" loading="lazy">
+      </div>
+      <div class="g-item" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="DSC04452摆台2.jpg" alt="兜兜" loading="lazy">
+      </div>
+      <div class="g-item" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="DSC04449.jpg" alt="兜兜" loading="lazy">
+      </div>
+      <div class="g-item wide" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="DSC04469.jpg" alt="兜兜" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ MAP ══════ -->
+  <div class="divider">— ⁕ —</div>
+  <div class="sec-sm">
+    <h2 class="sec-title">宴 会 地 点</h2>
+  </div>
+  <div class="map-sec">
+    <div class="map-card" onclick="openMap()">
+      <div class="map-icon">🏛️</div>
+      <div class="map-name">春风醴食府</div>
+      <div class="map-addr">3楼宴会厅<br>湖南省株洲市醴陵市</div>
+      <div class="map-hint">👆 点击导航至酒店</div>
+    </div>
+  </div>
+
+  <!-- ══════ English Quote ══════ -->
+  <div class="en-quote">
+    The best is yet to come.<br>And we want you there.
+  </div>
+
+  <!-- ══════ RSVP ══════ -->
+  <div class="sec-sm">
+    <h2 class="sec-title">恭 请 光 临</h2>
+  </div>
+  <div class="rsvp-sec">
+    <p class="rsvp-msg">
+      诚挚期待您的到来<br>
+      与我们共同见证兜兜的成长时刻
+    </p>
+    <p class="rsvp-cta">
+      如需确认出席或有任何疑问<br>请联系我们
+    </p>
+    <a class="rsvp-tel" href="tel:18621907290">📞 186 2190 7290</a>
+  </div>
+
+  <!-- ══════ FOOTER ══════ -->
+  <div class="footer">
+    <div class="ft-ornament">❁  ❁  ❁</div>
+    <div class="ft-text">感恩有你 · 一路相伴</div>
+    <div class="ft-sub">唐若昕（兜兜）百日宴 · 2026.07.05</div>
+  </div>
+
+</div>
+
+<!-- Floating CTA -->
+<div class="float-cta">
+  <button onclick="shareInvitation()">📨 转发邀请函</button>
+</div>
+
+<!-- Music Toggle -->
+<div class="music-btn on" id="musicToggle" onclick="toggleMusic()" title="背景音乐">🎵</div>
+
+<!-- Lightbox -->
+<div class="lb" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <img src="" alt="兜兜照片" id="lightboxImg">
 </div>
 
 <script>
-function openDetail() {
-  document.getElementById('coverCard').style.display = 'none';
-  document.getElementById('detailPage').style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+// ═══════════════════════════════════════════
+//  Countdown Timer
+// ═══════════════════════════════════════════
+const eventDate = new Date('2026-07-05T11:38:00+08:00');
+
+function updateCountdown() {
+  const now = new Date();
+  let diff = eventDate - now;
+
+  if (diff <= 0) {
+    document.getElementById('cd-days').textContent = '🎉';
+    document.getElementById('cd-hours').textContent = '🎉';
+    document.getElementById('cd-mins').textContent = '开';
+    document.getElementById('cd-secs').textContent = '始';
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  diff -= days * 1000 * 60 * 60 * 24;
+  const hours = Math.floor(diff / (1000 * 60 * 60));
+  diff -= hours * 1000 * 60 * 60;
+  const mins = Math.floor(diff / (1000 * 60));
+  diff -= mins * 1000 * 60;
+  const secs = Math.floor(diff / 1000);
+
+  document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+  document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+  document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+  document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
 }
 
-function closeDetail() {
-  document.getElementById('detailPage').style.display = 'none';
-  document.getElementById('coverCard').style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// ═══════════════════════════════════════════
+//  Lightbox
+// ═══════════════════════════════════════════
+function openLightbox(src) {
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(e) {
+  if (e && e.target !== document.getElementById('lightbox') && e.target.tagName !== 'IMG') return;
+  document.getElementById('lightbox').classList.remove('on');
+  document.body.style.overflow = '';
 }
 
-// 等待 iframe 加载完成后调整高度
-document.getElementById('detailIframe').addEventListener('load', function() {
-  try {
-    const iframe = this;
-    const doc = iframe.contentDocument || iframe.contentWindow.document;
-    if (doc && doc.body) {
-      iframe.style.height = Math.max(doc.body.scrollHeight, 800) + 'px';
+// ═══════════════════════════════════════════
+//  Map Navigation
+// ═══════════════════════════════════════════
+function openMap() {
+  const addr = '醴陵春风醴食府';
+  const urls = [
+    `https://uri.amap.com/search?keyword=${encodeURIComponent(addr)}`,
+    `https://apis.map.qq.com/uri/v1/search?keyword=${encodeURIComponent(addr)}`,
+  ];
+  window.open(urls[0], '_blank');
+  setTimeout(() => {
+    if (confirm('请选择导航App：\n\n确定 = 高德地图\n取消 = 打开腾讯地图')) {
+      window.open(urls[0], '_blank');
+    } else {
+      window.open(urls[1], '_blank');
     }
-  } catch(e) {
-    // 跨域限制，设置默认高度
-    document.getElementById('detailIframe').style.height = '2000px';
+  }, 800);
+}
+
+// ═══════════════════════════════════════════
+//  Share
+// ═══════════════════════════════════════════
+function shareInvitation() {
+  if (navigator.share) {
+    navigator.share({
+      title: '兜兜百日宴邀请函',
+      text: '唐若昕（兜兜）小朋友百日宴，诚邀您及家人参加！📅 2026年7月5日 📍 醴陵春风醴食府3楼宴会厅',
+      url: window.location.origin + window.location.pathname.replace('invitation.html', ''),
+    }).catch(() => {});
+  } else {
+    const url = window.location.origin + window.location.pathname.replace('invitation.html', '');
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(() => {
+        alert('邀请函链接已复制，请粘贴发送给好友！');
+      });
+    } else {
+      prompt('复制下方链接发送给好友：', url);
+    }
+  }
+}
+
+// ═══════════════════════════════════════════
+//  Music: 爱的纪念 - Web Audio 钢琴合成
+// ═══════════════════════════════════════════
+let musicPlaying = true;
+let audioCtx = null;
+let masterGain = null;
+let musicTimer = null;
+const musicToggle = document.getElementById('musicToggle');
+
+const melody = [
+  392, 415, 466, 523, 587, 622, 587, 523, 466, 415, 392,
+  349, 392, 415, 466, 523, 466, 415, 392, 349, 311, 349,
+  392, 523, 466, 415, 392, 349, 311, 349, 392, 523, 587,
+  622, 587, 523, 466, 523, 466, 415, 392, 349, 311, 349,
+  392, 415, 466, 523, 587, 622, 587, 523, 466, 415, 392,
+  349, 392, 415, 466, 523, 466, 415, 392, 349, 311,
+  349, 392, 415, 466, 523,
+];
+
+const longNotes = new Set([10, 21, 32, 38, 41, 43, 54, 64, 69]);
+const noteDuration = 0.40;
+const loopPause = 2.2;
+
+const CHORDS = {
+  'Cm':  { bass: 131, notes: [262, 311, 392, 523] },
+  'Fm':  { bass: 175, notes: [349, 415, 523, 659] },
+  'G7':  { bass: 196, notes: [392, 494, 587, 698] },
+  'Eb':  { bass: 156, notes: [311, 392, 466, 622] },
+};
+
+const chordChanges = [
+  { at: 0,  ch: 'Cm' }, { at: 11, ch: 'Fm' }, { at: 17, ch: 'Cm' },
+  { at: 22, ch: 'Cm' }, { at: 28, ch: 'G7' }, { at: 31, ch: 'Cm' },
+  { at: 33, ch: 'Eb' }, { at: 36, ch: 'Cm' }, { at: 44, ch: 'Cm' },
+  { at: 50, ch: 'G7' }, { at: 55, ch: 'Fm' }, { at: 61, ch: 'Cm' },
+  { at: 65, ch: 'G7' }, { at: 67, ch: 'Cm' },
+];
+
+function pianoNote(freq, startTime, duration, outputGain, velocity = 1.0) {
+  const s = 0.22 * velocity;
+  const harmonics = [
+    [1, 1.0*s], [2, 0.45*s], [3, 0.22*s], [4, 0.10*s],
+    [5.01, 0.05*s], [6.02, 0.025*s], [8.03, 0.011*s],
+  ];
+  harmonics.forEach(([ratio, amp]) => {
+    const osc = audioCtx.createOscillator();
+    const g = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq * ratio, startTime);
+    const a = 0.007, d = duration * 0.5, sLvl = amp * 0.10;
+    g.gain.setValueAtTime(0, startTime);
+    g.gain.linearRampToValueAtTime(amp * 0.30, startTime + a);
+    g.gain.exponentialRampToValueAtTime(sLvl, startTime + a + d);
+    g.gain.exponentialRampToValueAtTime(0.0004, startTime + duration + 0.02);
+    osc.connect(g); g.connect(outputGain);
+    osc.start(startTime); osc.stop(startTime + duration + 0.12);
+  });
+}
+
+function bassNote(freq, startTime, duration, outputGain) {
+  [1, 0.5].forEach((vol, idx) => {
+    const f = idx === 0 ? freq : freq * 1.5;
+    [[1,1],[2,0.5],[3,0.2],[4,0.09]].forEach(([ratio, amp]) => {
+      const osc = audioCtx.createOscillator();
+      const g = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(f * ratio, startTime);
+      g.gain.setValueAtTime(0, startTime);
+      g.gain.linearRampToValueAtTime(amp * 0.14 * vol, startTime + 0.012);
+      g.gain.exponentialRampToValueAtTime(amp * 0.03 * vol, startTime + duration * 0.35);
+      g.gain.exponentialRampToValueAtTime(0.0002, startTime + duration);
+      osc.connect(g); g.connect(outputGain);
+      osc.start(startTime); osc.stop(startTime + duration + 0.18);
+    });
+  });
+}
+
+function arpeggio(chordName, startTime, outputGain) {
+  const ch = CHORDS[chordName]; if (!ch) return;
+  const p = [
+    ch.notes[0], ch.notes[1], ch.notes[2], ch.notes[3],
+    ch.notes[2]*2, ch.notes[3]*2,
+    ch.notes[3]*2, ch.notes[2]*2, ch.notes[1]*2, ch.notes[0]*2,
+    ch.notes[1], ch.notes[0],
+  ];
+  const total = noteDuration * 3.5, step = total / p.length;
+  p.forEach((freq, i) => {
+    pianoNote(freq, startTime + i * step, step * 2.8, outputGain, 0.38);
+  });
+}
+
+function chordPad(chordName, startTime, duration, outputGain) {
+  const ch = CHORDS[chordName]; if (!ch) return;
+  ch.notes.forEach((freq, i) => {
+    const osc = audioCtx.createOscillator();
+    const g = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, startTime);
+    const vol = i === 0 ? 0.016 : 0.010;
+    g.gain.setValueAtTime(0, startTime);
+    g.gain.linearRampToValueAtTime(vol, startTime + 0.2);
+    g.gain.setValueAtTime(vol, startTime + duration * 0.65);
+    g.gain.exponentialRampToValueAtTime(0.0002, startTime + duration);
+    osc.connect(g); g.connect(outputGain);
+    osc.start(startTime); osc.stop(startTime + duration + 0.3);
+  });
+}
+
+function reverb(freq, startTime, outputGain, intensity = 1.0) {
+  [0.22, 0.50, 0.82, 1.18].forEach(delay => {
+    const osc = audioCtx.createOscillator();
+    const g = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, startTime + delay);
+    g.gain.setValueAtTime(0, startTime);
+    g.gain.setValueAtTime(0.013 * intensity, startTime + delay);
+    g.gain.exponentialRampToValueAtTime(0.0002, startTime + delay + 0.85);
+    osc.connect(g); g.connect(outputGain);
+    osc.start(startTime + delay); osc.stop(startTime + delay + 0.95);
+  });
+}
+
+function playArrangement() {
+  if (!musicPlaying || !audioCtx) return;
+  const now = audioCtx.currentTime;
+  let t = now + 0.06;
+  let curCh = 'Cm', nxt = 0;
+
+  melody.forEach((freq, i) => {
+    if (nxt < chordChanges.length && chordChanges[nxt].at === i) {
+      curCh = chordChanges[nxt].ch;
+      const cd = CHORDS[curCh];
+      if (cd) {
+        bassNote(cd.bass, t, noteDuration * 3.2, masterGain);
+        arpeggio(curCh, t, masterGain);
+        const span = (nxt + 1 < chordChanges.length)
+          ? (chordChanges[nxt + 1].at - i) * noteDuration : noteDuration * 5;
+        chordPad(curCh, t, Math.min(span, noteDuration * 4.5), masterGain);
+      }
+      nxt++;
+    }
+
+    const dur = longNotes.has(i) ? noteDuration * 2.0 : noteDuration;
+    pianoNote(freq, t, dur, masterGain, 0.88);
+    pianoNote(freq * 2, t, dur * 0.95, masterGain, 0.22);
+
+    if (longNotes.has(i) || (i + 1) % 11 === 0) {
+      reverb(freq, t, masterGain, longNotes.has(i) ? 1.3 : 0.8);
+    }
+    if (i % 4 === 0 && CHORDS[curCh]) {
+      bassNote(CHORDS[curCh].bass, t, noteDuration * 1.2, masterGain);
+    }
+    t += noteDuration;
+  });
+
+  musicTimer = setTimeout(playArrangement, (melody.length * noteDuration + loopPause) * 1000);
+}
+
+function startPiano() {
+  if (audioCtx) return;
+  try {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    masterGain = audioCtx.createGain();
+    masterGain.gain.setValueAtTime(0.24, audioCtx.currentTime);
+    masterGain.connect(audioCtx.destination);
+    playArrangement();
+    musicToggle.classList.add('on');
+    musicToggle.textContent = '🎵';
+  } catch(e) { musicToggle.textContent = '🔇'; }
+}
+
+function toggleMusic() {
+  if (!audioCtx) { startPiano(); musicPlaying = true; return; }
+  if (musicPlaying) {
+    masterGain.gain.setValueAtTime(0, audioCtx.currentTime);
+    musicToggle.classList.remove('on');
+    musicToggle.textContent = '🔇';
+    musicPlaying = false;
+  } else {
+    masterGain.gain.setValueAtTime(0.24, audioCtx.currentTime);
+    musicToggle.classList.add('on');
+    musicToggle.textContent = '🎵';
+    musicPlaying = true;
+    if (musicTimer) clearTimeout(musicTimer);
+    playArrangement();
+  }
+}
+
+function initMusic() {
+  if (!audioCtx && musicPlaying) startPiano();
+}
+document.addEventListener('click', initMusic, { once: true });
+document.addEventListener('touchstart', initMusic, { once: true });
+
+// ═══════════════════════════════════════════
+//  Floating Petals
+// ═══════════════════════════════════════════
+const petalEmojis = ['🌸', '💮', '🌺', '✿', '🌷', '🩷'];
+function createPetal() {
+  const petal = document.createElement('span');
+  petal.className = 'petal';
+  petal.textContent = petalEmojis[Math.floor(Math.random() * petalEmojis.length)];
+  petal.style.left = Math.random() * 100 + '%';
+  petal.style.animationDuration = (Math.random() * 8 + 10) + 's';
+  petal.style.animationDelay = Math.random() * 5 + 's';
+  petal.style.fontSize = (Math.random() * 14 + 12) + 'px';
+  document.body.appendChild(petal);
+  setTimeout(() => { petal.remove(); }, 18000);
+}
+setInterval(createPetal, 2500);
+createPetal(); createPetal(); createPetal();
+
+// ═══════════════════════════════════════════
+//  Parallax hero image
+// ═══════════════════════════════════════════
+window.addEventListener('scroll', () => {
+  const scrolled = window.pageYOffset;
+  const hero = document.querySelector('.hero-img');
+  if (hero && scrolled < window.innerHeight) {
+    hero.style.transform = `translateY(${scrolled * 0.35}px)`;
   }
 });
+
+console.log('🎉 兜兜百日宴邀请函已就绪');
+console.log('📅 2026年7月5日 · 醴陵春风醴食府3楼宴会厅');
+console.log('👶 唐若昕（兜兜）· 百日记');
 </script>
+
 </body>
 </html>
